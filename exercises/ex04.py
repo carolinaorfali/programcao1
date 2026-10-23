@@ -8,7 +8,8 @@ tentativas= []
 while(cores != 'end'):
     cores = input(f"Me fale cores primarias: -->")
     attempt += 1
-    tentativas.append(cores)
+    if(cores != "end"):
+     tentativas.append(cores)
     if ( cores== 'end'):
         print(f'desitiu ao fim de {attempt} tentativas')
 else:
