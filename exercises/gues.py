@@ -1,3 +1,4 @@
+
 import random #random qualquer numero#
 lmin,lmax = 1,1000
 numbertoguess = random.randint(lmin,lmax)  
@@ -34,5 +35,8 @@ else:
     print(f'acertou no numero {numbertoguess} em {attempt} tentativas')
     for tentativa in tentativas:
         print(tentativa)
+
+
+
 
     
