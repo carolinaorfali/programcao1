@@ -1,6 +1,7 @@
 opcao=-1
 
 while (opcao!=0):
+    print("\nMENU PASSAGEIRO")
     print("Escolha uma opcao:")
     print("1.administracao")
     print("2.companhia")
@@ -14,7 +15,7 @@ while (opcao!=0):
           continue
     
     if opcao == 0:
-        print("opcao valida")
+        print("programa finalizado")
         
 
     elif opcao==1:
@@ -26,9 +27,11 @@ while (opcao!=0):
     elif opcao==3: 
      print("opcao valida")
 
-    elif opcao > 4 or opcao < 0 :
+    elif opcao > 3 or opcao < 0 :
         print("Opcao invalida")
-menu={"administracao"}
+        
+
+
 
 
 
