@@ -1,3 +1,6 @@
+from exercises.teste02 import passageiro
+
+
 companhias = {"TAP": {"pais": "Portugal", "ativa": True},
               "Iberia": {"pais": "Espanha", "ativa": True}}          
 aeroportos = {"Lisboa": "Portugal", "Porto": "Portugal", "Madrid": "Espanha"}  
@@ -7,23 +10,22 @@ voos = {"TP1": {"companhia": "TAP", "origem": "Lisboa", "destino": "Madrid", "pr
         "IB2": {"companhia": "Iberia", "origem": "Madrid", "destino": "Porto", "preco": 110.0}}
 reservas = [["Ana", "TP1"], ["Ana", "IB2"], ["Rui", "TP1"]]  # Ana com 2 reservas; TP1 com 2 passageiros
 
-# ===== MENU PRINCIPAL====
-perfil = ""
+#MENU PRINCIPA
 while perfil != "0":
     perfil = input("\nPERFIL: 1-Gestão 2-Companhia 3-Passageiro 0-Sair: ")
 
-    # ----- PERFIL 1: GESTÃO -----
+    #PERFIL 1: GESTÃO
     if perfil == "1":
         op = ""
-        while op != "0":
-            op = input("\nGESTÃO: 1-Inserir companhia 2-Alterar país 3-Ativar/desativar 4-Inserir aeroporto 0-Voltar: ")
-            if op == "1":
+        while op:
+         input("\nGESTÃO: 1-Inserir companhia 2-Alterar país 3-Ativar/desativar 4-Inserir aeroporto 0-Voltar: ")
+        if op == "1":
                 nome = input("Nome da companhia: ")
                 if nome == "" or nome in companhias:
                     print("Nome vazio ou já existe.")
                 else:
                     companhias[nome] = {"pais": input("País: "), "ativa": True}
-            elif op == "2" or op == "3":
+        elif op == "2" or op == "3":
                 print(companhias)
                 nome = input("Companhia: ")
                 if nome not in companhias:
@@ -32,16 +34,16 @@ while perfil != "0":
                     companhias[nome]["pais"] = input("Novo país: ")
                 else:
                     companhias[nome]["ativa"] = not companhias[nome]["ativa"]  # inverte o estado
-            elif op == "4":
+        elif op == "4":
                 nome = input("Nome do aeroporto: ")
                 if nome == "" or nome in aeroportos:
                     print("Nome vazio ou já existe.")
                 else:
                     aeroportos[nome] = input("País: ")
-            elif op != "0":
+        elif op != "0":
                 print("Opção inválida.")
 
-    # ----- PERFIL 2 COMPANHIA -----
+    #PERFIL 2 COMPANHIA
     elif perfil == "2":
         print(companhias)
         minha = input("Sua companhia: ")
@@ -92,14 +94,14 @@ while perfil != "0":
                 elif op != "0":
                     print("Opção inválida.")
 
-    # ----- PERFIL 3: PASSAGEIRO -----
+    #PERFIL 3: PASSAGEIRO 
     elif perfil == "3":
         nome = input("Seu nome: ")
         if nome == "":
             print("Nome vazio.")
         else:
-            if nome not in passageiros:
-                passageiros.append(nome)
+            if nome not in passageiro:
+                passageiro.append(nome)
             op = ""
             while op != "0":
                 op = input(f"\n{nome}: 1-Ver voos 2-Comparar 3-Reservar 4-Alterar reserva 5-Anular reserva 0-Voltar: ")
